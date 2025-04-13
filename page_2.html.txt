@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>页面 2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 修改为你自己的图片链接 -->
+        <img src="https://i.ibb.co/Zphc4rQc/IMG-8652.jpg" alt="图片 2"> <!-- 更改为你自己的图片 -->
+        <h1>小狗难过，小狗不开心，带我回家嘛~</h1>
+        <div class="buttons">
+            <button id="yes">愿意</button>
+            <button id="no">不要</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

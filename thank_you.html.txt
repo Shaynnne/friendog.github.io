@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>感谢</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 修改为你自己的感谢图片 -->
+        <img src="https://i.ibb.co/DZ9m78p/IMG-8657.jpg" alt="感谢图片"> <!-- 更改为你自己的图片 -->
+        <h1>感谢你选择我成为你的小狗！就知道你最爱小狗了!
+我回家给你暖床♥</h1>
+    </div>
+</body>
+</html>
