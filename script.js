@@ -1,35 +1,33 @@
 const yesButton = document.getElementById('yes');
 const noButton = document.getElementById('no');
-let noClickCount = 0; // 记录点击"不要"的次数
 
-// 设置按钮大小的初始值
+// 從 localStorage 取得點擊次數，若沒有則為 0
+let noClickCount = parseInt(localStorage.getItem('noClickCount')) || 0;
+
+// 定義願意按鈕的大小
 const buttonSizes = ['1em', '1.2em', '1.5em', '1.8em', '2em'];
 
-// 按钮点击事件：点击“愿意”
-yesButton.addEventListener('click', function() {
-    window.location.href = 'thank_you.html'; // 跳转到感谢页面
+// 點擊「願意」按鈕時
+yesButton.addEventListener('click', function () {
+    localStorage.removeItem('noClickCount'); // 清除記錄（回歸初始）
+    window.location.href = 'thank_you.html'; // 跳轉到感謝頁面
 });
 
-// 按钮点击事件：点击“不要”
-noButton.addEventListener('click', function() {
+// 點擊「不要」按鈕時
+noButton.addEventListener('click', function () {
     noClickCount++;
+    localStorage.setItem('noClickCount', noClickCount); // 更新並保存點擊次數
 
-    // 如果点击次数小于等于4，跳转到对应页面
     if (noClickCount <= 4) {
-        window.location.href = `page_${noClickCount}.html`; // 跳转到 page_1.html 到 page_4.html
+        window.location.href = `page_${noClickCount}.html`; // 跳轉到 page_1.html ~ page_4.html
     }
 
-    // 第四次点击后只显示“愿意”按钮，不显示“不要”
     if (noClickCount === 4) {
-        noButton.style.display = 'none'; // 隐藏“不要”按钮
+        noButton.style.display = 'none'; // 隱藏「不要」按鈕
     }
 });
 
-// 如果是新的页面，调整"愿意"按钮的大小
+// 根據點擊次數調整「願意」按鈕大小
 if (yesButton) {
-    if (noClickCount < 4) {
-        yesButton.style.fontSize = buttonSizes[noClickCount]; // 随着点击次数增大按钮
-    } else {
-        yesButton.style.fontSize = buttonSizes[4]; // 如果已经是第四个页面，最大按钮大小
-    }
+    yesButton.style.fontSize = buttonSizes[Math.min(noClickCount, 4)];
 }
