@@ -1,0 +1,43 @@
+/* 设置基础样式 */
+body {
+    font-family: Arial, sans-serif;
+    background: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    text-align: center;
+    color: #333; /* 改进文本颜色 */
+}
+
+/* 按钮样式 */
+button {
+    font-size: 1em;
+    padding: 12px 24px;  /* 加大按钮的点击区域 */
+    margin: 10px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: all 0.3s ease;  /* 让所有样式有平滑过渡效果 */
+}
+
+/* 按钮的 hover 效果 */
+button:hover {
+    background-color: #45a049;
+    transform: scale(1.1); /* 鼠标悬停时略微增大按钮 */
+}
+
+/* 按钮点击时的缩放效果 */
+button:active {
+    transform: scale(0.98);  /* 按钮被点击时稍微缩小 */
+    background-color: #3e8e41;  /* 按钮点击时改变颜色 */
+}
+
+/* 可选：自适应按钮文字 */
+button:focus {
+    outline: none;  /* 移除聚焦时的默认外边框 */
+    box-shadow: 0 0 5px rgba(0, 128, 0, 0.8);  /* 添加绿色阴影 */
+}
